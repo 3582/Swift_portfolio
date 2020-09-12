@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.7.3)
+  - EMTNeumorphicView (1.0.4)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7.2)
+  - EMTNeumorphicView
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - EMTNeumorphicView
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  EMTNeumorphicView: cb5e92953e43b1872ab47fefd451a9ce0c16fc77
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: c2662fd43e1f409f2d54fde942292e7b6c4bf0a1
+
+COCOAPODS: 1.9.3
