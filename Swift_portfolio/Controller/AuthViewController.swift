@@ -7,14 +7,34 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class AuthViewController: UIViewController {
-
+    
+    @IBOutlet weak var user_name: UITextField!
+    @IBOutlet weak var user_email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var password_confirmation: UITextField!
+    
+    var accesstoken: String!
+    var client: String!
+    var uid:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func signup_button(_ sender: Any) {
+        var params: [String: String] = [:]
+        params["user_name"] = user_name.text!
+        params["email"] = user_email.text!
+        params["password"] = password.text!
+        params["password_confirmation"] = password_confirmation.text!
+    }
+    
     
     
     /*

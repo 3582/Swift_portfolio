@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201B7AC3251109D90046CD30 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B7AC2251109D90046CD30 /* user.swift */; };
 		201E61DC250D17100038332C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E61DB250D17100038332C /* AuthViewController.swift */; };
 		202FAF5924DD8C080099350A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FAF5824DD8C080099350A /* AppDelegate.swift */; };
 		202FAF5B24DD8C080099350A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FAF5A24DD8C080099350A /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		201B7AC2251109D90046CD30 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = SOURCE_ROOT; };
 		201E61DB250D17100038332C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		202FAF5524DD8C080099350A /* Swift_portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		202FAF5824DD8C080099350A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		201E61D8250D14C10038332C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				201B7AC2251109D90046CD30 /* user.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201B7AC3251109D90046CD30 /* user.swift in Sources */,
 				202FAF5924DD8C080099350A /* AppDelegate.swift in Sources */,
 				201E61DC250D17100038332C /* AuthViewController.swift in Sources */,
 				202FAF5B24DD8C080099350A /* SceneDelegate.swift in Sources */,
