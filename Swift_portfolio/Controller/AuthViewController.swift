@@ -27,15 +27,23 @@ class AuthViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func signup_button(_ sender: Any) {
         var params: [String: String] = [:]
-        params["user_name"] = user_name.text!
+        params["name"] = user_name.text!
         params["email"] = user_email.text!
         params["password"] = password.text!
         params["password_confirmation"] = password_confirmation.text!
         
-        Alamofire.request("http://localhost:3000/api/auth", method: .post, parameters: params).responseJSON { response in
+        Alamofire.request("http://localhost:3000/api/v1/auth", method: .post, parameters: params).responseJSON { response in
             print("Request: \(String(describing: response.request))")
             print("Response: \(String(describing: response.response))")
             print("Error: \(String(describing: response.error))")
