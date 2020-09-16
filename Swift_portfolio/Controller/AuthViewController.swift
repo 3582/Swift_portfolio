@@ -101,3 +101,4 @@ class AuthViewController: UIViewController {
     */
 
 }
+}
