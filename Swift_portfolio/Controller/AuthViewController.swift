@@ -27,8 +27,8 @@ class AuthViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+            // キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // キーボードを閉じる
         textField.resignFirstResponder()
         return true
     }
@@ -36,14 +36,13 @@ class AuthViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func signup_button(_ sender: Any) {
+    @IBAction func signin_button(_ sender: Any) {
         var params: [String: String] = [:]
-        params["name"] = user_name.text!
         params["email"] = user_email.text!
         params["password"] = password.text!
         params["password_confirmation"] = password_confirmation.text!
         
-        Alamofire.request("http://localhost:3000/api/v1/auth", method: .post, parameters: params).responseJSON { response in
+        Alamofire.request("http://localhost:3000/api/v1/auth/sign_in", method: .post, parameters: params).responseJSON { response in
             print("Request: \(String(describing: response.request))")
             print("Response: \(String(describing: response.response))")
             print("Error: \(String(describing: response.error))")
@@ -58,7 +57,7 @@ class AuthViewController: UIViewController {
 
                 //通信後にこれらの情報を取ってこれていた場合は
                 if self.accesstoken != nil && self.client != nil && self.uid != nil {
-                    print("current_user_id保存成功")
+                    print("current_user_id保存成功_signin")
 
                     //responseから保存したアカウントデータのIDを抜き出す
                     let json:JSON = JSON(response.result.value ?? kill)
@@ -89,14 +88,74 @@ class AuthViewController: UIViewController {
                     appDelegate.uid = uid
 
                 }
-
                 //エラーがあった場合
             } else {
                 print("Error: \(String(describing: response.error))")
+                
             }
+        }
     }
     
     
+    @IBAction func signup_button(_ sender: Any) {
+        var params: [String: String] = [:]
+        params["name"] = user_name.text!
+        params["email"] = user_email.text!
+        params["password"] = password.text!
+        params["password_confirmation"] = password_confirmation.text!
+        
+        Alamofire.request("http://localhost:3000/api/v1/auth", method: .post, parameters: params).responseJSON { response in
+            print("Request: \(String(describing: response.request))")
+            print("Response: \(String(describing: response.response))")
+            print("Error: \(String(describing: response.error))")
+
+            //エラーがなかった場合
+            if response.response?.statusCode == 200 {
+
+                //responseからヘッダー情報を取り出して変数に保存する
+                self.accesstoken = (response.response?.allHeaderFields["access-token"] as? String)!
+                self.client = (response.response?.allHeaderFields["client"] as? String)!
+                self.uid = (response.response?.allHeaderFields["uid"] as? String)!
+
+                //通信後にこれらの情報を取ってこれていた場合は
+                if self.accesstoken != nil && self.client != nil && self.uid != nil {
+                    print("current_user_id保存成功_signup")
+
+                    //responseから保存したアカウントデータのIDを抜き出す
+                    let json:JSON = JSON(response.result.value ?? kill)
+                    json.forEach { (arg) in
+                        let (_, json) = arg
+                        self.current_user_id = json["id"].intValue
+                    }
+
+                    let current_user_id: Int = self.current_user_id
+                    let accesstoken: String = self.accesstoken
+                    let client: String = self.client
+                    let uid: String = self.uid
+
+                    print("accesstoken: \(String(describing: accesstoken))")
+                    print("client: \(String(describing: client))")
+                    print("uid: \(String(describing: uid))")
+                    print("CurrentUserID: \(String(describing: current_user_id))")
+
+                    let current_user = Currentuser()
+                    //パラメーターセット
+                    current_user.current_user_id = current_user_id
+
+                    //appDelegateに上げる
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.current_user_id = current_user
+                    appDelegate.accesstoken = accesstoken
+                    appDelegate.client = client
+                    appDelegate.uid = uid
+
+                }
+                //エラーがあった場合
+            } else {
+                print("Error: \(String(describing: response.error))")
+                
+            }
+        }
     
     /*
     // MARK: - Navigation
@@ -107,6 +166,6 @@ class AuthViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
+        
+    }
 }
