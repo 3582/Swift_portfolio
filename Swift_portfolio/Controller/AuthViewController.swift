@@ -77,6 +77,7 @@ class AuthViewController: UIViewController {
                     print("CurrentUserID: \(String(describing: current_user_id))")
 
                     let current_user = Currentuser()
+                    
                     //パラメーターセット
                     current_user.current_user_id = current_user_id
 
