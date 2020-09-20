@@ -15,6 +15,8 @@
 		202FAF6224DD8C0E0099350A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202FAF6124DD8C0E0099350A /* Assets.xcassets */; };
 		202FAF6524DD8C0E0099350A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202FAF6324DD8C0E0099350A /* LaunchScreen.storyboard */; };
 		20F4D3232516523F00B15BC9 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F4D3222516523F00B15BC9 /* TimeLineViewController.swift */; };
+		20F4D3282517052D00B15BC9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F4D3272517052D00B15BC9 /* PostViewController.swift */; };
+		20F4D32B2517054D00B15BC9 /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F4D32A2517054D00B15BC9 /* post.swift */; };
 		D56BE6E76E6563CB6B7DA86B /* Pods_Swift_portfolio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF13ED7BCD12C376433A817 /* Pods_Swift_portfolio.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		202FAF6424DD8C0E0099350A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		202FAF6624DD8C0E0099350A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20F4D3222516523F00B15BC9 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+		20F4D3272517052D00B15BC9 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		20F4D32A2517054D00B15BC9 /* post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = post.swift; path = Swift_portfolio/Controller/post.swift; sourceTree = SOURCE_ROOT; };
 		5DE9380958AEDC47E114A932 /* Pods-Swift_portfolio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_portfolio.release.xcconfig"; path = "Target Support Files/Pods-Swift_portfolio/Pods-Swift_portfolio.release.xcconfig"; sourceTree = "<group>"; };
 		BBF13ED7BCD12C376433A817 /* Pods_Swift_portfolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_portfolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE97359864F03573168D26A0 /* Pods-Swift_portfolio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_portfolio.debug.xcconfig"; path = "Target Support Files/Pods-Swift_portfolio/Pods-Swift_portfolio.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				201B7AC2251109D90046CD30 /* user.swift */,
+				20F4D32A2517054D00B15BC9 /* post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -69,6 +74,7 @@
 				202FAF5A24DD8C080099350A /* SceneDelegate.swift */,
 				201E61DB250D17100038332C /* AuthViewController.swift */,
 				20F4D3222516523F00B15BC9 /* TimeLineViewController.swift */,
+				20F4D3272517052D00B15BC9 /* PostViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,8 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F4D3282517052D00B15BC9 /* PostViewController.swift in Sources */,
 				201B7AC3251109D90046CD30 /* user.swift in Sources */,
 				202FAF5924DD8C080099350A /* AppDelegate.swift in Sources */,
+				20F4D32B2517054D00B15BC9 /* post.swift in Sources */,
 				201E61DC250D17100038332C /* AuthViewController.swift in Sources */,
 				20F4D3232516523F00B15BC9 /* TimeLineViewController.swift in Sources */,
 				202FAF5B24DD8C080099350A /* SceneDelegate.swift in Sources */,
