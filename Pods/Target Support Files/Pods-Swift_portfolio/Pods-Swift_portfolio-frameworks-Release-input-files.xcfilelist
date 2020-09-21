@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Swift_portfolio/Pods-Swift_portfolio-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/EMTNeumorphicView/EMTNeumorphicView.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
