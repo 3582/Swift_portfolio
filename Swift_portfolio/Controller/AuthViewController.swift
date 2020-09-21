@@ -37,7 +37,7 @@ class AuthViewController: UIViewController {
     }
     
     func login_success() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Timeline") as! TimeLineViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Post") as! PostViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -50,8 +50,7 @@ class AuthViewController: UIViewController {
         Alamofire.request("http://localhost:3000/api/v1/auth/sign_in", method: .post, parameters: params).responseJSON { response in
             print("Request: \(String(describing: response.request))")
             print("Response: \(String(describing: response.response))")
-            print("Error: \(String(describing: response.error))")
-
+            
             //エラーがなかった場合
             if response.response?.statusCode == 200 {
                 self.login_success()
