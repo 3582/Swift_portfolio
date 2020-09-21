@@ -178,12 +178,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="送信"/>
+                                <connections>
+                                    <action selector="sendButton:" destination="YOl-qc-g7P" eventType="touchUpInside" id="aiU-sk-JCG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7cE-2U-8fc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="wyq-3i-24t"/>
+                    <connections>
+                        <outlet property="commentText" destination="VZ1-9I-hYb" id="mwA-6j-4Ba"/>
+                        <outlet property="postImage" destination="97Z-vF-RPJ" id="9t9-Bv-sPP"/>
+                        <outlet property="titleText" destination="mdd-JI-Yzp" id="OsG-5e-9av"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHZ-qH-xvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -200,12 +208,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="YOl-qc-g7P" kind="relationship" relationship="rootViewController" id="idw-oI-X7h"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="If2-cy-9d7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IS1-E9-lxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="70" y="84"/>
         </scene>
     </scenes>
     <resources>
