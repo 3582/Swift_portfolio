@@ -34,7 +34,7 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
         return contentsArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = timeLineTable.dequeueReusableCell(withIdentifier: "Cell", for: <#T##IndexPath#>)
+        let cell = timeLineTable.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let profileImageView = cell.viewWithTag(1) as! UIImageView
         profileImageView.sd_setImage(with: URL(string: contentsArray[indexPath.row].userImageString), completed:nil )

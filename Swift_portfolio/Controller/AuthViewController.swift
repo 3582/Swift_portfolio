@@ -37,7 +37,7 @@ class AuthViewController: UIViewController {
     }
     
     func login_success() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Post") as!PostViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Timeline") as! TimeLineViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
