@@ -73,7 +73,6 @@
                         <outlet property="password_confirmation" destination="ldd-7I-pJu" id="fri-Vd-gq7"/>
                         <outlet property="user_email" destination="fVY-es-5ZD" id="th0-YN-xmX"/>
                         <outlet property="user_name" destination="Ctx-gj-GW9" id="VW8-LL-Sx8"/>
-                        <segue destination="YDr-9M-6lh" kind="show" id="uvN-A0-sVg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -83,7 +82,7 @@
         <!--Time Line View Controller-->
         <scene sceneID="NHf-P9-eNt">
             <objects>
-                <viewController id="YDr-9M-6lh" customClass="TimeLineViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Timeline" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YDr-9M-6lh" customClass="TimeLineViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WRK-Dd-9AH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,7 +150,7 @@
         <!--Post View Controller-->
         <scene sceneID="8j5-Yh-O1b">
             <objects>
-                <viewController id="YOl-qc-g7P" customClass="PostViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Post" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YOl-qc-g7P" customClass="PostViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Di1-Is-Tta">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

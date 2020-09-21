@@ -36,6 +36,11 @@ class AuthViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func login_success() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Post") as!PostViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func signin_button(_ sender: Any) {
         var params: [String: String] = [:]
         params["email"] = user_email.text!
@@ -49,6 +54,7 @@ class AuthViewController: UIViewController {
 
             //エラーがなかった場合
             if response.response?.statusCode == 200 {
+                self.login_success()
 
                 //responseからヘッダー情報を取り出して変数に保存する
                 self.accesstoken = (response.response?.allHeaderFields["access-token"] as? String)!
@@ -112,6 +118,7 @@ class AuthViewController: UIViewController {
 
             //エラーがなかった場合
             if response.response?.statusCode == 200 {
+                self.login_success()
 
                 //responseからヘッダー情報を取り出して変数に保存する
                 self.accesstoken = (response.response?.allHeaderFields["access-token"] as? String)!
