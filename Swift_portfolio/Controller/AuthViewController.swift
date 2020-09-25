@@ -10,12 +10,14 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var user_name: UITextField!
     @IBOutlet weak var user_email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password_confirmation: UITextField!
+    
+    @IBOutlet weak var albumImage: UIImageView!
     
     var accesstoken: String!
     var client: String!
@@ -25,12 +27,10 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-
         
         // Do any additional setup after loading the view.
     }
-            // キーボードを閉じる
+    // キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -38,15 +38,32 @@ class AuthViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            } else {
-                let suggestionHeight = self.view.frame.origin.y + keyboardSize.height
-                self.view.frame.origin.y -= suggestionHeight
-            }
+    //画像選択
+    var picker: UIImagePickerController! = UIImagePickerController()
+    @IBAction func albumAction(_ sender: Any) {
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+        
+    }
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+
+        if let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
+            albumImage.image = image
+            
+        } else{
+            print("Error")
         }
+
+        // モーダルビューを閉じる
+        self.dismiss(animated: true, completion: nil)
+    }
+
+     //画像選択がキャンセルされた時に呼ばれる.
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+
+        // モーダルビューを閉じる
+        self.dismiss(animated: true, completion: nil)
     }
     
     
