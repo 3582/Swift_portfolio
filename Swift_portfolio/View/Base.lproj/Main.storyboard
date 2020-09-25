@@ -26,9 +26,13 @@
                                     <action selector="signin_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MXa-w0-J2a"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v21-2s-vZ0">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v21-2s-vZ0">
                                 <rect key="frame" x="82" y="107" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dBR-Pg-WDY" appends="YES" id="tSX-jb-yk3"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ctx-gj-GW9">
                                 <rect key="frame" x="82" y="397" width="250" height="34"/>
@@ -69,6 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kqF-LW-d5B"/>
                     <connections>
+                        <outlet property="albumImage" destination="v21-2s-vZ0" id="bh9-q5-7i6"/>
                         <outlet property="password" destination="VLJ-Rn-GuY" id="rTX-E6-dR2"/>
                         <outlet property="password_confirmation" destination="ldd-7I-pJu" id="fri-Vd-gq7"/>
                         <outlet property="user_email" destination="fVY-es-5ZD" id="th0-YN-xmX"/>
@@ -76,6 +81,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dBR-Pg-WDY">
+                    <connections>
+                        <action selector="albumAction:" destination="BYZ-38-t0r" id="FCP-Bd-2fc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="583" y="-562"/>
         </scene>
