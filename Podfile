@@ -9,5 +9,6 @@ target 'Swift_portfolio' do
 pod 'Alamofire', '~> 4.7.2'
 pod 'EMTNeumorphicView'
 pod 'SwiftyJSON'
+pod 'SDWebImage', '~> 5.0'
 
 end

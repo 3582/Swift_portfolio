@@ -7,16 +7,58 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class PostViewController: UIViewController {
 
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var commentText: UITextView!
+    
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
+    // キーボードを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
+    }
+    
+    @IBAction func sendButton(_ sender: Any) {
+        var headers: [String:String] = [:]
+        var params: [String: String] = [:]
+        
+        headers["access-token"] = appDelegate.accesstoken
+        headers["client"] = appDelegate.client
+        headers["uid"] = appDelegate.uid
+        
+        params["title"] = titleText.text!
+        params["text"] = commentText.text!
+        
+        Alamofire.request("http://localhost:3000/api/v1/posts", method: .post, parameters: params, headers: headers).responseJSON { response in
+            
+            print("Request: \(String(describing: response.request))")
+            print("Response: \(String(describing: response.response))")
+            
+            if response.response?.statusCode == 200 {
+                print("success")
+                
+            } else {
+                print("Error: \(String(describing: response.error))")
+
+            }
+        }
+    }
+}
+    
     /*
     // MARK: - Navigation
 
@@ -27,4 +69,4 @@ class PostViewController: UIViewController {
     }
     */
 
-}
+

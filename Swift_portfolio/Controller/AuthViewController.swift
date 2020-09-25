@@ -25,6 +25,9 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+        
         // Do any additional setup after loading the view.
     }
             // キーボードを閉じる
@@ -35,9 +38,20 @@ class AuthViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            } else {
+                let suggestionHeight = self.view.frame.origin.y + keyboardSize.height
+                self.view.frame.origin.y -= suggestionHeight
+            }
+        }
+    }
+    
     
     func login_success() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Post") as!PostViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Post") as! PostViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -50,8 +64,7 @@ class AuthViewController: UIViewController {
         Alamofire.request("http://localhost:3000/api/v1/auth/sign_in", method: .post, parameters: params).responseJSON { response in
             print("Request: \(String(describing: response.request))")
             print("Response: \(String(describing: response.response))")
-            print("Error: \(String(describing: response.error))")
-
+            
             //エラーがなかった場合
             if response.response?.statusCode == 200 {
                 self.login_success()
