@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20005A1D251CFC630096BDFB /* image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20005A1C251CFC630096BDFB /* image.swift */; };
 		201E61DC250D17100038332C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E61DB250D17100038332C /* AuthViewController.swift */; };
 		202FAF5924DD8C080099350A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FAF5824DD8C080099350A /* AppDelegate.swift */; };
 		202FAF5B24DD8C080099350A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FAF5A24DD8C080099350A /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20005A1C251CFC630096BDFB /* image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image.swift; sourceTree = "<group>"; };
 		201E61DB250D17100038332C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		202FAF5524DD8C080099350A /* Swift_portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		202FAF5824DD8C080099350A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				20F4D33F25174BDB00B15BC9 /* user.swift */,
 				20F4D34225174C2400B15BC9 /* post.swift */,
+				20005A1C251CFC630096BDFB /* image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F4D3282517052D00B15BC9 /* PostViewController.swift in Sources */,
+				20005A1D251CFC630096BDFB /* image.swift in Sources */,
 				202FAF5924DD8C080099350A /* AppDelegate.swift in Sources */,
 				201E61DC250D17100038332C /* AuthViewController.swift in Sources */,
 				20F4D34325174C2400B15BC9 /* post.swift in Sources */,
