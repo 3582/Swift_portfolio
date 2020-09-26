@@ -26,8 +26,12 @@ class AuthViewController: UIViewController, UIImagePickerControllerDelegate & UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        albumImage.clipsToBounds = true
+        albumImage.layer.cornerRadius = albumImage.frame.height / 2.0
+        albumImage.layer.borderColor = UIColor.gray.cgColor
+        albumImage.layer.borderWidth = 0.5
+        albumImage.image = UIImage(named: "add_to_photos-black-18dp (1)")
+        albumImage.contentMode = .scaleAspectFill
         // Do any additional setup after loading the view.
     }
     // キーボードを閉じる
@@ -46,15 +50,13 @@ class AuthViewController: UIViewController, UIImagePickerControllerDelegate & UI
         present(picker, animated: true, completion: nil)
         
     }
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-
-        if let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage {
             albumImage.image = image
-            
+
         } else{
             print("Error")
         }
-
         // モーダルビューを閉じる
         self.dismiss(animated: true, completion: nil)
     }
