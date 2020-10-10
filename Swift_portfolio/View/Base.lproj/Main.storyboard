@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YOl-qc-g7P">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -290,11 +290,18 @@
                                 <rect key="frame" x="72" y="700" width="270" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <state key="normal" title="送信"/>
+                                <state key="normal" title="START"/>
                                 <connections>
                                     <action selector="sendButton:" destination="YOl-qc-g7P" eventType="touchUpInside" id="aiU-sk-JCG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8W-WC-0VT">
+                                <rect key="frame" x="72" y="199" width="270" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7cE-2U-8fc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -302,12 +309,13 @@
                     <navigationItem key="navigationItem" id="wyq-3i-24t"/>
                     <connections>
                         <outlet property="commentText" destination="VZ1-9I-hYb" id="mwA-6j-4Ba"/>
+                        <outlet property="currentTime" destination="c8W-WC-0VT" id="mje-34-m49"/>
                         <outlet property="titleText" destination="mdd-JI-Yzp" id="OsG-5e-9av"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHZ-qH-xvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="-520"/>
+            <point key="canvasLocation" x="1805.7971014492755" y="-520.3125"/>
         </scene>
     </scenes>
     <resources>
