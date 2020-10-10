@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-06T12:55:05.600Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="mEE9D51igOUEnVII0Ztx" version="13.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-10T15:13:19.793Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="p-UMM1Wm8E1wzYe5DdaS" version="13.7.7" type="github">
   <diagram id="5d85YtfUtr9XSAqdXYxp" name="ページ1">
     <mxGraphModel dx="946" dy="591" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -89,7 +89,7 @@
           <mxGeometry x="13.725490196078432" y="60" width="35.294117647058826" height="35.294117647058826" as="geometry" />
         </mxCell>
         <mxCell id="Qp9vbcd0IQCg1ICPjASV-15" value="text" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" parent="Qp9vbcd0IQCg1ICPjASV-12" vertex="1">
-          <mxGeometry x="24.509803921568633" y="250" width="147.05882352941177" height="80" as="geometry" />
+          <mxGeometry x="28.22980392156863" y="250" width="147.05882352941177" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Qp9vbcd0IQCg1ICPjASV-19" value="name" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" parent="Qp9vbcd0IQCg1ICPjASV-12" vertex="1">
           <mxGeometry x="58.8235294117647" y="68" width="127.4509803921569" height="20" as="geometry" />
@@ -97,14 +97,14 @@
         <mxCell id="Qp9vbcd0IQCg1ICPjASV-44" value="&lt;b&gt;投稿画面&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#CCFFE6;" parent="Qp9vbcd0IQCg1ICPjASV-12" vertex="1">
           <mxGeometry width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="jNvIQHg4V1jWrLRhlRbQ-7" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;shadow=0;dashed=0;shape=mxgraph.ios7.icons.alarm_clock;" parent="Qp9vbcd0IQCg1ICPjASV-12" vertex="1">
-          <mxGeometry x="84.80392156862746" y="140" width="26.470588235294116" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="jNvIQHg4V1jWrLRhlRbQ-8" value="title" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" parent="Qp9vbcd0IQCg1ICPjASV-12" vertex="1">
-          <mxGeometry x="26.470588235294116" y="190" width="147.05882352941177" height="50" as="geometry" />
+          <mxGeometry x="28.230588235294118" y="190" width="147.05882352941177" height="50" as="geometry" />
         </mxCell>
         <mxCell id="RLjvYu8lpYwrjwBoLWt2-1" value="切替フッター&lt;br&gt;投稿画面・投稿一覧&lt;br&gt;ランキング仮・プロフィール変更" style="rounded=0;whiteSpace=wrap;html=1;" parent="Qp9vbcd0IQCg1ICPjASV-12" vertex="1">
           <mxGeometry y="350" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-15" value="time&lt;br&gt;minute:second" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Qp9vbcd0IQCg1ICPjASV-12">
+          <mxGeometry x="29.990000000000002" y="110" width="143.53" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jNvIQHg4V1jWrLRhlRbQ-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="evoJNXDT1guMXmTG7ENF-1" target="Qp9vbcd0IQCg1ICPjASV-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
