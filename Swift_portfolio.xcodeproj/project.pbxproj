@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20002526252E0A8000255BCE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20002525252E0A8000255BCE /* ProfileViewController.swift */; };
 		20002529252E0B5100255BCE /* MyTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20002528252E0B5100255BCE /* MyTimeLineViewController.swift */; };
 		201E61DC250D17100038332C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E61DB250D17100038332C /* AuthViewController.swift */; };
 		202FAF5924DD8C080099350A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FAF5824DD8C080099350A /* AppDelegate.swift */; };
@@ -24,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20002525252E0A8000255BCE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		20002528252E0B5100255BCE /* MyTimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimeLineViewController.swift; sourceTree = "<group>"; };
 		20005A1C251CFC630096BDFB /* image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image.swift; sourceTree = "<group>"; };
 		201E61DB250D17100038332C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				201E61DB250D17100038332C /* AuthViewController.swift */,
 				20F4D3222516523F00B15BC9 /* TimeLineViewController.swift */,
 				20F4D3272517052D00B15BC9 /* PostViewController.swift */,
-				20002525252E0A8000255BCE /* ProfileViewController.swift */,
 				20002528252E0B5100255BCE /* MyTimeLineViewController.swift */,
 			);
 			path = Controller;
@@ -270,7 +267,6 @@
 				20F4D34325174C2400B15BC9 /* post.swift in Sources */,
 				20F4D34025174BDB00B15BC9 /* user.swift in Sources */,
 				20F4D3232516523F00B15BC9 /* TimeLineViewController.swift in Sources */,
-				20002526252E0A8000255BCE /* ProfileViewController.swift in Sources */,
 				202FAF5B24DD8C080099350A /* SceneDelegate.swift in Sources */,
 				20E2A395251E690600721FF0 /* contents.swift in Sources */,
 			);

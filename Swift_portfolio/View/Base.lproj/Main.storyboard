@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YOl-qc-g7P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nkg-3P-1IV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Auth View Controller-->
+        <!--Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Auth" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="AuthViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,6 +65,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="square.and.pencil" catalog="system" id="XJ8-4k-sVW"/>
                     <navigationItem key="navigationItem" id="kqF-LW-d5B"/>
                     <connections>
                         <outlet property="albumImage" destination="v21-2s-vZ0" id="vEq-Kq-pM6"/>
@@ -80,67 +81,29 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="948" y="-520"/>
+            <point key="canvasLocation" x="1043" y="-714"/>
         </scene>
-        <!--Profile View Controller-->
-        <scene sceneID="I6T-Tz-g0U">
+        <!--Tab Bar Controller-->
+        <scene sceneID="bwZ-bd-trP">
             <objects>
-                <viewController id="cgU-8o-wC3" customClass="ProfileViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jlV-v2-0M0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjH-Yi-4lc">
-                                <rect key="frame" x="82" y="698" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="sign_in"/>
-                                <connections>
-                                    <action selector="signin_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hLw-aT-H8t"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50N-Lu-7Eb">
-                                <rect key="frame" x="82" y="510" width="250" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zJ-1N-QMD">
-                                <rect key="frame" x="82" y="627" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="sign_up"/>
-                                <connections>
-                                    <action selector="signup_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MK2-hi-1CZ"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password confirmation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-Bg-3V7">
-                                <rect key="frame" x="82" y="567" width="250" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6yy-Yu-fYc">
-                                <rect key="frame" x="107" y="170" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0se-Ar-1uA">
-                                <rect key="frame" x="82" y="443" width="250" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="U66-mw-6cB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="01q-sS-cIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="Nkg-3P-1IV" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZRj-Nl-6Lt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ugr-VQ-4hf"/>
+                        <segue destination="YOl-qc-g7P" kind="relationship" relationship="viewControllers" id="Puk-5i-lhK"/>
+                        <segue destination="YDr-9M-6lh" kind="relationship" relationship="viewControllers" id="gUK-Hf-LGp"/>
+                        <segue destination="c4Z-xv-6xj" kind="relationship" relationship="viewControllers" id="Uqx-tZ-Khd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mz1-oE-ctm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2461" y="-520"/>
+            <point key="canvasLocation" x="-12" y="-442"/>
         </scene>
-        <!--Time Line View Controller-->
+        <!--Timeline-->
         <scene sceneID="NHf-P9-eNt">
             <objects>
                 <viewController storyboardIdentifier="Timeline" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YDr-9M-6lh" customClass="TimeLineViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
@@ -195,6 +158,7 @@
                         <viewLayoutGuide key="safeArea" id="4LW-7Q-1Zf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Timeline" image="list.dash" catalog="system" id="cCW-Zm-hFk"/>
                     <navigationItem key="navigationItem" id="ZfK-yx-wfa"/>
                     <connections>
                         <outlet property="timeLineTable" destination="Dmd-XM-4g8" id="rps-pk-gRW"/>
@@ -202,9 +166,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VE-ZB-7i4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805.7971014492755" y="126.5625"/>
+            <point key="canvasLocation" x="1042" y="673"/>
         </scene>
-        <!--My Time Line View Controller-->
+        <!--MyList-->
         <scene sceneID="zC6-NF-e1F">
             <objects>
                 <viewController id="c4Z-xv-6xj" customClass="MyTimeLineViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
@@ -259,12 +223,13 @@
                         <viewLayoutGuide key="safeArea" id="Qgj-EJ-ayH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="MyList" image="doc.plaintext" catalog="system" id="u3s-Pu-EPQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgh-0N-EW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2460.8695652173915" y="126.5625"/>
+            <point key="canvasLocation" x="178" y="673"/>
         </scene>
-        <!--Post View Controller-->
+        <!--Task-->
         <scene sceneID="8j5-Yh-O1b">
             <objects>
                 <viewController storyboardIdentifier="Post" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YOl-qc-g7P" customClass="PostViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
@@ -306,6 +271,7 @@
                         <viewLayoutGuide key="safeArea" id="7cE-2U-8fc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Task" image="timer" catalog="system" id="2YT-FP-yoP"/>
                     <navigationItem key="navigationItem" id="wyq-3i-24t"/>
                     <connections>
                         <outlet property="commentText" destination="VZ1-9I-hYb" id="mwA-6j-4Ba"/>
@@ -315,10 +281,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHZ-qH-xvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805.7971014492755" y="-520.3125"/>
+            <point key="canvasLocation" x="1042" y="3"/>
         </scene>
     </scenes>
     <resources>
+        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
