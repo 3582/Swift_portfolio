@@ -15,11 +15,14 @@ class PostViewController: UIViewController {
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var commentText: UITextView!
 
+    @IBOutlet weak var taskButton: UIButton!
     @IBOutlet weak var currentTime: UILabel!
     
-    //0分0秒
-    var time: [Int] = [1,0]
+    var time: [Int] = [0,2]
+    var minute = String()
+    var second = String()
     var addtimer = Timer()
+    var starting = false
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
@@ -29,12 +32,8 @@ class PostViewController: UIViewController {
     }
     
     func timerStart(){
-        currentTime.text = String(time[0]) + ":" + String(time[1])
         addtimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(progress), userInfo: nil, repeats: true)
         
-    }
-    func timerstop(){
-        addtimer.invalidate()
     }
     
     @objc func progress(){
@@ -50,9 +49,19 @@ class PostViewController: UIViewController {
                 time[0] -= 1
                 
             }
+
         }
-        currentTime.text = String(time[0]) + ":" + String(time[1])
+        minute = String(time[0])
+        second = String(time[1])
         
+        if time[0] >= 0 && time[0] < 10 {
+            minute = "0" + minute
+        }
+        if time[1] >= 0 && time[1] < 10 {
+            second = "0" + second
+        }
+        
+        currentTime.text = minute + ":" + second
     }
 
     // キーボードを閉じる
@@ -64,31 +73,45 @@ class PostViewController: UIViewController {
     self.view.endEditing(true)
     }
     
-    @IBAction func sendButton(_ sender: Any) {
-        var headers: [String:String] = [:]
-        var params: [String: String] = [:]
-        
-        headers["access-token"] = appDelegate.accesstoken
-        headers["client"] = appDelegate.client
-        headers["uid"] = appDelegate.uid
-        
-        params["title"] = titleText.text!
-        params["text"] = commentText.text!
-        
-        Alamofire.request("http://localhost:3000/api/v1/posts", method: .post, parameters: params, headers: headers).responseJSON { response in
+    @IBAction func startButton(_ sender: Any) {
+        if starting == false {
+            taskButton.setTitle("STOP", for: .normal)
+            starting = true
+            timerStart()
             
-            print("Request: \(String(describing: response.request))")
-            print("Response: \(String(describing: response.response))")
+        }else{
+            taskButton.setTitle("STOP", for: .normal)
+            starting = false
             
-            if response.response?.statusCode == 200 {
-                print("success")
-                
-            } else {
-                print("Error: \(String(describing: response.error))")
-
-            }
+            addtimer.invalidate()
         }
     }
+    
+//    @IBAction func sendButton(_ sender: Any) {
+//        var headers: [String:String] = [:]
+//        var params: [String: String] = [:]
+//
+//        headers["access-token"] = appDelegate.accesstoken
+//        headers["client"] = appDelegate.client
+//        headers["uid"] = appDelegate.uid
+//
+//        params["title"] = titleText.text!
+//        params["text"] = commentText.text!
+//
+//        Alamofire.request("http://localhost:3000/api/v1/posts", method: .post, parameters: params, headers: headers).responseJSON { response in
+//
+//            print("Request: \(String(describing: response.request))")
+//            print("Response: \(String(describing: response.response))")
+//
+//            if response.response?.statusCode == 200 {
+//                print("success")
+//
+//            } else {
+//                print("Error: \(String(describing: response.error))")
+//
+//            }
+//        }
+//    }
 }
     
     /*
