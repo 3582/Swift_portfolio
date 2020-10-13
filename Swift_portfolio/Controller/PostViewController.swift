@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class PostViewController: UIViewController {
 
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var planLabel: UILabel!
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var commentText: UITextView!
 
