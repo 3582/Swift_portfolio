@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-11T13:13:45.531Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="tJGeKu9LuKkKWteTvTZB" version="13.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-14T13:29:31.269Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="9LwBaroar896DdGdD46M" version="13.7.9" type="github">
   <diagram id="5d85YtfUtr9XSAqdXYxp" name="ページ1">
     <mxGraphModel dx="946" dy="591" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -19,7 +19,7 @@
         <mxCell id="Qp9vbcd0IQCg1ICPjASV-11" value="name" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" parent="Qp9vbcd0IQCg1ICPjASV-2" vertex="1">
           <mxGeometry x="58.8235294117647" y="68" width="127.4509803921569" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="Qp9vbcd0IQCg1ICPjASV-43" value="&lt;b&gt;投稿一覧画面&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#CCFFE6;" parent="Qp9vbcd0IQCg1ICPjASV-2" vertex="1">
+        <mxCell id="Qp9vbcd0IQCg1ICPjASV-43" value="&lt;b&gt;MyList&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#CCFFE6;" parent="Qp9vbcd0IQCg1ICPjASV-2" vertex="1">
           <mxGeometry width="200" height="40" as="geometry" />
         </mxCell>
         <mxCell id="jNvIQHg4V1jWrLRhlRbQ-1" value="profile_image" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="Qp9vbcd0IQCg1ICPjASV-2" vertex="1">
@@ -67,7 +67,7 @@
         <mxCell id="RLjvYu8lpYwrjwBoLWt2-1" value="tabbar&lt;br&gt;投稿画面・投稿一覧&lt;br&gt;ランキング仮・プロフィール変更" style="rounded=0;whiteSpace=wrap;html=1;" parent="Qp9vbcd0IQCg1ICPjASV-12" vertex="1">
           <mxGeometry y="350" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-15" value="time&lt;br&gt;minute:second" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Qp9vbcd0IQCg1ICPjASV-12">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-15" value="time&lt;br&gt;minute:second" style="rounded=0;whiteSpace=wrap;html=1;" parent="Qp9vbcd0IQCg1ICPjASV-12" vertex="1">
           <mxGeometry x="29.990000000000002" y="110" width="143.53" height="60" as="geometry" />
         </mxCell>
         <mxCell id="RLjvYu8lpYwrjwBoLWt2-2" value="" style="group" parent="1" vertex="1" connectable="0">
@@ -106,40 +106,40 @@
         <mxCell id="RLjvYu8lpYwrjwBoLWt2-13" value="name" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" parent="RLjvYu8lpYwrjwBoLWt2-2" vertex="1">
           <mxGeometry x="58.8235294117647" y="248" width="127.4509803921569" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-13" value="tabbar&lt;br&gt;投稿画面・投稿一覧&lt;br&gt;ランキング仮・プロフィール変更" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="RLjvYu8lpYwrjwBoLWt2-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-13" value="tabbar&lt;br&gt;投稿画面・投稿一覧&lt;br&gt;ランキング仮・プロフィール変更" style="rounded=0;whiteSpace=wrap;html=1;" parent="RLjvYu8lpYwrjwBoLWt2-2" vertex="1">
           <mxGeometry x="2.042810365310288e-14" y="350" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-1" value="" style="group;labelBackgroundColor=none;fontStyle=1" vertex="1" connectable="0" parent="1">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-1" value="" style="group;labelBackgroundColor=none;fontStyle=1" parent="1" vertex="1" connectable="0">
           <mxGeometry x="578.04" y="480" width="200" height="390" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-2" value="" style="group" vertex="1" connectable="0" parent="iqZtUuaCd_tjH6S7MvoU-1">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-2" value="" style="group" parent="iqZtUuaCd_tjH6S7MvoU-1" vertex="1" connectable="0">
           <mxGeometry width="200" height="390" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry width="200" height="390" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-4" value="profile_image" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-4" value="profile_image" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry x="60" y="80" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-5" value="name" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-5" value="name" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry x="25" y="170" width="150" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-6" value="email" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-6" value="email" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry x="23.04" y="210" width="150" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-7" value="password" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;allowArrows=1;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-7" value="password" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;allowArrows=1;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry x="25" y="250" width="150" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-8" value="&lt;b&gt;プロフィール変更画面&lt;br&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#CCFFE6;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-8" value="&lt;b&gt;プロフィール変更画面&lt;br&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#CCFFE6;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-10" value="変更" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;allowArrows=1;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-10" value="変更" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;allowArrows=1;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry x="25" y="290" width="150" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-11" value="お気に入りの画像を&lt;br&gt;プロフィールに設定" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-11" value="お気に入りの画像を&lt;br&gt;プロフィールに設定" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry x="30" y="60" width="140" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="iqZtUuaCd_tjH6S7MvoU-14" value="tabbar&lt;br&gt;投稿画面・投稿一覧&lt;br&gt;ランキング仮・プロフィール変更" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="iqZtUuaCd_tjH6S7MvoU-2">
+        <mxCell id="iqZtUuaCd_tjH6S7MvoU-14" value="tabbar&lt;br&gt;投稿画面・投稿一覧&lt;br&gt;ランキング仮・プロフィール変更" style="rounded=0;whiteSpace=wrap;html=1;" parent="iqZtUuaCd_tjH6S7MvoU-2" vertex="1">
           <mxGeometry y="350" width="200" height="40" as="geometry" />
         </mxCell>
       </root>
