@@ -12,21 +12,28 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     
 
     @IBOutlet weak var taskTable: UITableView!
+    @IBOutlet weak var taskText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         taskTable.delegate = self
         taskTable.dataSource = self
+        taskText.delegate = self
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -34,7 +41,7 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        
     }
     
 
