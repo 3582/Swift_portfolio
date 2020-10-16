@@ -14,6 +14,9 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var taskTable: UITableView!
     @IBOutlet weak var taskText: UITextField!
     
+    var textArray = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,14 +27,20 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        return textArray.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 1
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = taskTable.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = textArray[indexPath.row]
         return cell
         
     }
@@ -41,9 +50,20 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postVC = storyboard?.instantiateViewController(identifier: "Post") as! PostViewController
+        
+        self.present(postVC, animated: true, completion: nil)
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textArray.append(taskText.text!)
+        taskText.resignFirstResponder()
+        taskText.text = ""
+        taskTable.reloadData()
+        
+        return true
+    }
 
     /*
     // MARK: - Navigation
