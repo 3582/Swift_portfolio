@@ -20,7 +20,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var taskButton: UIButton!
     @IBOutlet weak var currentTime: UILabel!
     
-    var time: [Int] = [0,2]
+    var time: [Int] = [25,0]
     var minute = String()
     var second = String()
     var addtimer = Timer()

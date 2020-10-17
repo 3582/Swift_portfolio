@@ -46,13 +46,19 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.size.height/7
+        return view.frame.size.height/10
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let postVC = storyboard?.instantiateViewController(identifier: "Post") as! PostViewController
+        let postVC = PostViewController()
+        let rootVC = UIApplication.shared.windows.first?.rootViewController as? UITabBarController
+        let navigationController = rootVC?.children[0] as? UINavigationController
+
+        rootVC?.selectedIndex = 0
+        navigationController?.pushViewController(postVC, animated: true)
         
-        self.present(postVC, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
