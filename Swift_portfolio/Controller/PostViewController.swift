@@ -11,29 +11,34 @@ import Alamofire
 import SwiftyJSON
 
 class PostViewController: UIViewController {
-
     @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var planLabel: UILabel!
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var commentText: UITextView!
 
     @IBOutlet weak var taskButton: UIButton!
     @IBOutlet weak var currentTime: UILabel!
     
-    var time: [Int] = [25,0]
+    var time: [Int] = [0,0]
     var minute = String()
     var second = String()
     var addtimer = Timer()
     var starting = false
     
+    var titleString = String()
+    var totalString = String()
+    
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        titleText.text = titleString
+        totalLabel.text = totalString
+        
         // Do any additional setup after loading the view.
     }
     
     func timerStart(){
+        getTime()
         addtimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(progress), userInfo: nil, repeats: true)
         
     }
@@ -41,6 +46,8 @@ class PostViewController: UIViewController {
     @objc func progress(){
         if (time[0] == 0 && time[1] == 0){
             addtimer.invalidate()
+            plusTotal()
+            
         } else if (time[1] > 0){
             time[1] -= 1
             
@@ -71,9 +78,6 @@ class PostViewController: UIViewController {
     textField.resignFirstResponder()
     return true
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.view.endEditing(true)
-    }
     
     @IBAction func startButton(_ sender: Any) {
         if starting == false {
@@ -88,6 +92,34 @@ class PostViewController: UIViewController {
             addtimer.invalidate()
         }
     }
+    //合計回数加算
+    func plusTotal(){
+        let from = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy:0)
+        let to = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy: 6)
+        
+        let from_time = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy:6)
+        let to_time = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy: totalLabel.text!.count)
+        
+        let total_time = Int(totalLabel.text![from_time..<to_time])! + 1
+        
+        totalLabel.text = totalLabel.text![from..<to] + String(total_time)
+    }
+    
+    //labelから時間取得
+    func getTime() {
+        let from = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy:0)
+        let to = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy: 2)
+        
+        let from_s = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy:3)
+        let to_s = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy: 5)
+        
+        let minute_int = Int(currentTime.text![from..<to])!
+        let second_int = Int(currentTime.text![from_s..<to_s])!
+        
+        time[0] = minute_int
+        time[1] = second_int
+    }
+
     
 //    @IBAction func sendButton(_ sender: Any) {
 //        var headers: [String:String] = [:]

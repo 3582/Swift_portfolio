@@ -15,7 +15,7 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var taskText: UITextField!
     
     var textArray = [String]()
-    
+    var totalArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,17 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         taskTable.delegate = self
         taskTable.dataSource = self
         taskText.delegate = self
+        
+//        let appDomain = Bundle.main.bundleIdentifier
+//        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+        
+        if UserDefaults.standard.object(forKey: "TodoList") != nil{
+            textArray = UserDefaults.standard.object(forKey: "TodoList") as! [String]
+        }
+        
+        if UserDefaults.standard.object(forKey: "TotalList") != nil{
+            totalArray = UserDefaults.standard.object(forKey: "TotalList") as! [String]
+        }
         
     }
     
@@ -41,6 +52,12 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         let cell = taskTable.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         cell.textLabel?.text = textArray[indexPath.row]
+        
+        if UserDefaults.standard.object(forKey: "TotalList") != nil{
+            let totalLabel = cell.viewWithTag(1) as! UILabel
+            totalLabel.text = totalArray[indexPath.row]
+        }
+
         return cell
         
     }
@@ -54,19 +71,29 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         let postVC = PostViewController()
         let rootVC = UIApplication.shared.windows.first?.rootViewController as? UITabBarController
         let navigationController = rootVC?.children[0] as? UINavigationController
-
+        
+        
+        postVC.titleString = textArray[indexPath.row]
+        postVC.totalString = totalArray[indexPath.row]
+        
         rootVC?.selectedIndex = 0
         navigationController?.pushViewController(postVC, animated: true)
-        
+
+        //ハイライト設定
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textArray.append(taskText.text!)
+        totalArray.append("total:1")
+        
         taskText.resignFirstResponder()
         taskText.text = ""
         taskTable.reloadData()
+        
+        UserDefaults.standard.set(textArray, forKey: "TodoList")
+        UserDefaults.standard.set(totalArray, forKey: "TotalList")
         
         return true
     }
