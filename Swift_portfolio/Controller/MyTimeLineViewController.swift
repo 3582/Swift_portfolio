@@ -68,17 +68,14 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let postVC = PostViewController()
-        let rootVC = UIApplication.shared.windows.first?.rootViewController as? UITabBarController
-        let navigationController = rootVC?.children[0] as? UINavigationController
-        
-        
-        postVC.titleString = textArray[indexPath.row]
-        postVC.totalString = totalArray[indexPath.row]
-        
-        rootVC?.selectedIndex = 0
-        navigationController?.pushViewController(postVC, animated: true)
-
+        let postVC = storyboard?.instantiateViewController(withIdentifier: "Post") as! PostViewController
+//        let rootVC = UIApplication.shared.windows.first?.rootViewController as? UITabBarController
+//        let navigationController = rootVC?.children[0] as? UINavigationController
+//        rootVC?.selectedIndex = 0
+//        navigationController?.pushViewController(postVC, animated: true)
+        postVC.indexInt = indexPath.row
+        postVC.firstBool = true
+        self.present(postVC, animated: true, completion: nil)
         //ハイライト設定
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -86,7 +83,7 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textArray.append(taskText.text!)
-        totalArray.append("total:1")
+        totalArray.append("total:0")
         
         taskText.resignFirstResponder()
         taskText.text = ""
