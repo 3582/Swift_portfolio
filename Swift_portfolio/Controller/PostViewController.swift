@@ -23,16 +23,22 @@ class PostViewController: UIViewController {
     var second = String()
     var addtimer = Timer()
     var starting = false
-    
-    var titleString = String()
-    var totalString = String()
+    var indexInt = Int()
+    var firstBool = false
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        titleText.text = titleString
-        totalLabel.text = totalString
+        if firstBool == true {
+                var textArray = [String]()
+                    
+                textArray = UserDefaults.standard.object(forKey: "TodoList") as! [String]
+                titleText.text = textArray[indexInt]
+                var totalArray = [String]()
+                    
+                totalArray = UserDefaults.standard.object(forKey: "TotalList") as! [String]
+                totalLabel.text = totalArray[indexInt]
+        }
         
         // Do any additional setup after loading the view.
     }
