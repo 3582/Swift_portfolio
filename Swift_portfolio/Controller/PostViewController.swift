@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class PostViewController: UIViewController {
+class PostViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var commentText: UITextView!
@@ -24,19 +24,25 @@ class PostViewController: UIViewController {
     var addtimer = Timer()
     var starting = false
     var indexInt = Int()
-    var firstBool = false
+    var mylistBool = false
     
+    var textArray = [String]()
+    var totalArray = [String]()
+
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
-        if firstBool == true {
-                var textArray = [String]()
-                    
-                textArray = UserDefaults.standard.object(forKey: "TodoList") as! [String]
+        titleText.delegate = self
+        
+        if UserDefaults.standard.object(forKey: "TodoList") != nil{
+            textArray = UserDefaults.standard.object(forKey: "TodoList") as! [String]
+        }
+        
+        if UserDefaults.standard.object(forKey: "TotalList") != nil{
+            totalArray = UserDefaults.standard.object(forKey: "TotalList") as! [String]
+        }
+        if mylistBool == true {
                 titleText.text = textArray[indexInt]
-                var totalArray = [String]()
-                    
-                totalArray = UserDefaults.standard.object(forKey: "TotalList") as! [String]
                 totalLabel.text = totalArray[indexInt]
         }
         
@@ -53,7 +59,20 @@ class PostViewController: UIViewController {
         if (time[0] == 0 && time[1] == 0){
             addtimer.invalidate()
             plusTotal()
+            if mylistBool == false {
+                textArray.append(titleText.text!)
+                UserDefaults.standard.set(textArray, forKey: "TodoList")
+                totalArray.append(totalLabel.text!)
+                UserDefaults.standard.set(totalArray, forKey: "TotalList")
+                
+            }else{
+                textArray[indexInt] = titleText.text!
+                UserDefaults.standard.set(textArray, forKey: "TodoList")
+                totalArray[indexInt] = totalLabel.text!
+                UserDefaults.standard.set(totalArray, forKey: "TotalList")
+            }
             
+
         } else if (time[1] > 0){
             time[1] -= 1
             
@@ -81,8 +100,9 @@ class PostViewController: UIViewController {
 
     // キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
+        
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func startButton(_ sender: Any) {
@@ -92,7 +112,7 @@ class PostViewController: UIViewController {
             timerStart()
             
         }else{
-            taskButton.setTitle("STOP", for: .normal)
+            taskButton.setTitle("START", for: .normal)
             starting = false
             
             addtimer.invalidate()
@@ -125,6 +145,8 @@ class PostViewController: UIViewController {
         time[0] = minute_int
         time[1] = second_int
     }
+    
+    
 
     
 //    @IBAction func sendButton(_ sender: Any) {
