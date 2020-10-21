@@ -53,9 +53,12 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         
         cell.textLabel?.text = textArray[indexPath.row]
         
+        let totalLabel = cell.viewWithTag(1) as! UILabel
         if UserDefaults.standard.object(forKey: "TotalList") != nil{
-            let totalLabel = cell.viewWithTag(1) as! UILabel
             totalLabel.text = totalArray[indexPath.row]
+        } else {
+            
+            totalLabel.text = "total:0"
         }
 
         return cell
@@ -74,7 +77,7 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
 //        rootVC?.selectedIndex = 0
 //        navigationController?.pushViewController(postVC, animated: true)
         postVC.indexInt = indexPath.row
-        postVC.firstBool = true
+        postVC.mylistBool = true
         self.present(postVC, animated: true, completion: nil)
         //ハイライト設定
         tableView.deselectRow(at: indexPath, animated: true)
