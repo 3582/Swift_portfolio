@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AudioToolbox
 
 class PostViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var totalLabel: UILabel!
@@ -57,6 +58,13 @@ class PostViewController: UIViewController, UITextFieldDelegate{
     
     @objc func progress(){
         if (time[0] == 0 && time[1] == 0){
+            var soundIdRing:SystemSoundID = 1000
+            if let soundUrl = CFBundleCopyResourceURL(CFBundleGetMainBundle(), nil, nil, nil){
+                   AudioServicesCreateSystemSoundID(soundUrl, &soundIdRing)
+                   AudioServicesPlaySystemSound(soundIdRing)
+                
+            }
+            
             addtimer.invalidate()
             plusTotal()
             if mylistBool == false {
