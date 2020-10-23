@@ -125,6 +125,9 @@ class PostViewController: UIViewController, UITextFieldDelegate{
             
             addtimer.invalidate()
         }
+        if currentTime.text == "00:00" {
+            currentTime.text = "05:00"
+        }
     }
     //合計回数加算
     func plusTotal(){
