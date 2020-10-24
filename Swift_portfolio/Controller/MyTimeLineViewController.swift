@@ -24,8 +24,8 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         taskTable.dataSource = self
         taskText.delegate = self
         
-//        let appDomain = Bundle.main.bundleIdentifier
-//        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+        let appDomain = Bundle.main.bundleIdentifier
+        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
         
         if UserDefaults.standard.object(forKey: "TodoList") != nil{
             textArray = UserDefaults.standard.object(forKey: "TodoList") as! [String]
