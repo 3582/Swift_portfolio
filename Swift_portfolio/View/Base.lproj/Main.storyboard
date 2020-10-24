@@ -264,6 +264,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-rf-rfs">
+                                <rect key="frame" x="72" y="388" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="REFRESH"/>
+                                <connections>
+                                    <action selector="refreshButton:" destination="YOl-qc-g7P" eventType="touchUpInside" id="eCf-RN-W92"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Bd-h1-XdX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -273,6 +282,7 @@
                     <connections>
                         <outlet property="commentText" destination="VZ1-9I-hYb" id="mwA-6j-4Ba"/>
                         <outlet property="currentTime" destination="c8W-WC-0VT" id="mje-34-m49"/>
+                        <outlet property="refreshB" destination="NTx-rf-rfs" id="G4e-VO-opv"/>
                         <outlet property="taskButton" destination="78A-Z1-RYi" id="apb-Ye-13p"/>
                         <outlet property="titleText" destination="mdd-JI-Yzp" id="OsG-5e-9av"/>
                         <outlet property="totalLabel" destination="g9S-0g-X6s" id="YzK-C3-4Jh"/>

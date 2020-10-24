@@ -19,6 +19,8 @@ class PostViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var taskButton: UIButton!
     @IBOutlet weak var currentTime: UILabel!
     
+    @IBOutlet weak var refreshB: UIButton!
+    
     var time: [Int] = [0,0]
     var minute = String()
     var second = String()
@@ -26,6 +28,8 @@ class PostViewController: UIViewController, UITextFieldDelegate{
     var starting = false
     var indexInt = Int()
     var mylistBool = false
+    var refresh = false
+    var task = false
     
     var textArray = [String]()
     var totalArray = [String]()
@@ -33,6 +37,9 @@ class PostViewController: UIViewController, UITextFieldDelegate{
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshB.isHidden = true
+        
         titleText.delegate = self
         
         if UserDefaults.standard.object(forKey: "TodoList") != nil{
@@ -65,8 +72,21 @@ class PostViewController: UIViewController, UITextFieldDelegate{
                 
             }
             
+            taskButton.setTitle("START", for: .normal)
+            
+            starting = false
             addtimer.invalidate()
-            plusTotal()
+            
+            if refresh == true {
+                refresh = false
+                
+            } else if task == true {
+                plusTotal()
+                refreshB.isHidden = false
+                
+                task = false
+            }
+            
             if mylistBool == false {
                 textArray.append(titleText.text!)
                 UserDefaults.standard.set(textArray, forKey: "TodoList")
@@ -114,10 +134,15 @@ class PostViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func startButton(_ sender: Any) {
+        if currentTime.text == "00:00" {
+            currentTime.text = "25:00"
+            refreshB.isHidden = true
+        }
         if starting == false {
             taskButton.setTitle("STOP", for: .normal)
             starting = true
             timerStart()
+            task = true
             
         }else{
             taskButton.setTitle("START", for: .normal)
@@ -125,10 +150,18 @@ class PostViewController: UIViewController, UITextFieldDelegate{
             
             addtimer.invalidate()
         }
-        if currentTime.text == "00:00" {
-            currentTime.text = "05:00"
-        }
     }
+    @IBAction func refreshButton(_ sender: Any) {
+        currentTime.text = "00:02"
+        refreshB.isHidden = true
+        refresh = true
+        
+        taskButton.setTitle("STOP", for: .normal)
+        starting = true
+        timerStart()
+        
+    }
+    
     //合計回数加算
     func plusTotal(){
         let from = totalLabel.text!.index(totalLabel.text!.startIndex, offsetBy:0)
