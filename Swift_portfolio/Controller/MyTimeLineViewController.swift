@@ -8,15 +8,15 @@
 
 import UIKit
 
-class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDataSource ,UITextFieldDelegate{
+class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDataSource ,UITextFieldDelegate {
     
-
     @IBOutlet weak var taskTable: UITableView!
     @IBOutlet weak var taskText: UITextField!
     
     var textArray = [String]()
     var totalArray = [String]()
-    
+    var indexInt = Int()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +24,8 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         taskTable.dataSource = self
         taskText.delegate = self
         
-        let appDomain = Bundle.main.bundleIdentifier
-        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+//        let appDomain = Bundle.main.bundleIdentifier
+//        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
         
         if UserDefaults.standard.object(forKey: "TodoList") != nil{
             textArray = UserDefaults.standard.object(forKey: "TodoList") as! [String]
@@ -72,10 +72,9 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let postVC = storyboard?.instantiateViewController(withIdentifier: "Post") as! PostViewController
-//        let rootVC = UIApplication.shared.windows.first?.rootViewController as? UITabBarController
-//        let navigationController = rootVC?.children[0] as? UINavigationController
-//        rootVC?.selectedIndex = 0
-//        navigationController?.pushViewController(postVC, animated: true)
+        postVC.presentationController?.delegate = self
+        
+        self.indexInt = indexPath.row
         postVC.indexInt = indexPath.row
         postVC.mylistBool = true
         self.present(postVC, animated: true, completion: nil)
@@ -107,5 +106,12 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         // Pass the selected object to the new view controller.
     }
     */
-
+}
+extension MyTimeLineViewController:UIAdaptivePresentationControllerDelegate{
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+      
+        print("closed")
+        self.loadView()
+        self.viewDidLoad()
+    }
 }

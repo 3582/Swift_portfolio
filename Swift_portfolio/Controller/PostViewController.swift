@@ -128,6 +128,9 @@ class PostViewController: UIViewController, UITextFieldDelegate{
 
     // キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textArray[indexInt] = titleText.text!
+        UserDefaults.standard.set(textArray, forKey: "TodoList")
+        
         
         textField.resignFirstResponder()
         return true
@@ -152,7 +155,7 @@ class PostViewController: UIViewController, UITextFieldDelegate{
         }
     }
     @IBAction func refreshButton(_ sender: Any) {
-        currentTime.text = "00:02"
+        currentTime.text = "05:00"
         refreshB.isHidden = true
         refresh = true
         
