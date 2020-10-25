@@ -38,6 +38,8 @@ class PostViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        commentText.layer.borderWidth = 1
+        commentText.layer.borderColor = UIColor.gray.cgColor
         refreshB.isHidden = true
         
         titleText.delegate = self

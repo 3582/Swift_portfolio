@@ -82,6 +82,24 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    //セルの編集許可
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+
+    //スワイプしたセルを削除　※arrayNameは変数名に変更してください
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            textArray.remove(at: indexPath.row)
+            totalArray.remove(at: indexPath.row)
+            
+            UserDefaults.standard.set(textArray, forKey: "TodoList")
+            UserDefaults.standard.set(totalArray, forKey: "TotalList")
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            
+        }
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textArray.append(taskText.text!)
@@ -109,9 +127,8 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
 }
 extension MyTimeLineViewController:UIAdaptivePresentationControllerDelegate{
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-      
-        print("closed")
         self.loadView()
         self.viewDidLoad()
+        
     }
 }
