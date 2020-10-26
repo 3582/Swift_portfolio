@@ -98,6 +98,7 @@ class PostViewController: UIViewController, UITextFieldDelegate{
             
             starting = false
             addtimer.invalidate()
+            alertShow()
             
             if refresh == true {
                 refresh = false
