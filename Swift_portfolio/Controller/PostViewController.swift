@@ -59,6 +59,26 @@ class PostViewController: UIViewController, UITextFieldDelegate{
         // Do any additional setup after loading the view.
     }
     
+    func alertShow(){
+        let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "TimeUp!", preferredStyle:  UIAlertController.Style.alert)
+
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+
+                (action: UIAlertAction!) -> Void in
+                print("OK")
+            })
+            // キャンセルボタン
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+
+                (action: UIAlertAction!) -> Void in
+                print("Cancel")
+            })
+
+            alert.addAction(cancelAction)
+            alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     func timerStart(){
         getTime()
         addtimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(progress), userInfo: nil, repeats: true)
