@@ -56,6 +56,10 @@ class PostViewController: UIViewController, UITextFieldDelegate{
                 totalLabel.text = totalArray[indexInt]
         }
         
+        func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+            UIApplication.shared.isIdleTimerDisabled = true
+            return true
+        }
         // Do any additional setup after loading the view.
     }
     
