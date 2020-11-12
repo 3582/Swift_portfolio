@@ -13,7 +13,6 @@ import SwiftyJSON
 class AuthViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var user_name: UITextField!
-    @IBOutlet weak var user_email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password_confirmation: UITextField!
     
@@ -76,7 +75,6 @@ class AuthViewController: UIViewController, UIImagePickerControllerDelegate & UI
     
     @IBAction func signin_button(_ sender: Any) {
         var params: [String: String] = [:]
-        params["email"] = user_email.text!
         params["password"] = password.text!
         params["password_confirmation"] = password_confirmation.text!
         
@@ -139,7 +137,6 @@ class AuthViewController: UIViewController, UIImagePickerControllerDelegate & UI
     @IBAction func signup_button(_ sender: Any) {
         var params: [String: String] = [:]
         params["name"] = user_name.text!
-        params["email"] = user_email.text!
         params["password"] = password.text!
         params["password_confirmation"] = password_confirmation.text!
         
