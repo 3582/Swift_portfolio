@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource, UIAdaptivePresentationControllerDelegate{
     @IBOutlet weak var timeLineTable: UITableView!
     
     var userName = String()
@@ -64,9 +64,14 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-    }
-    
+    }    
 
+    @IBAction func profileButton(_ sender: Any) {
+        let authVC = storyboard?.instantiateViewController(withIdentifier: "Auth") as! AuthViewController
+        authVC.presentationController?.delegate = self
+
+        self.present(authVC, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
