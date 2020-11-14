@@ -88,7 +88,6 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         return true
     }
 
-    //スワイプしたセルを削除　※arrayNameは変数名に変更してください
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             textArray.remove(at: indexPath.row)
@@ -115,6 +114,12 @@ class MyTimeLineViewController: UIViewController,UITableViewDelegate,UITableView
         return true
     }
 
+    @IBAction func profileButton(_ sender: Any) {
+        let authVC = storyboard?.instantiateViewController(withIdentifier: "Auth") as! AuthViewController
+        authVC.presentationController?.delegate = self
+
+        self.present(authVC, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

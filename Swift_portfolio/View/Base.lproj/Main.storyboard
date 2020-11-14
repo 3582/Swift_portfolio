@@ -115,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="-714.50892857142856"/>
         </scene>
-        <!--Timeline-->
+        <!--Ranking-->
         <scene sceneID="NHf-P9-eNt">
             <objects>
                 <viewController storyboardIdentifier="Timeline" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YDr-9M-6lh" customClass="TimeLineViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,19 +166,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-Fc-2qI">
-                                <rect key="frame" x="344" y="48" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="setting"/>
-                                <connections>
-                                    <action selector="profileButton:" destination="YDr-9M-6lh" eventType="touchUpInside" id="THi-XZ-Emq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d7K-rQ-BTR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timeline" image="list.dash" catalog="system" id="cCW-Zm-hFk"/>
+                    <tabBarItem key="tabBarItem" title="Ranking" image="list.dash" catalog="system" id="cCW-Zm-hFk"/>
                     <navigationItem key="navigationItem" id="ZfK-yx-wfa"/>
                     <connections>
                         <outlet property="timeLineTable" destination="Dmd-XM-4g8" id="rps-pk-gRW"/>
@@ -225,29 +217,52 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TaskName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMK-SG-tzV">
-                                <rect key="frame" x="47" y="112.5" width="320" height="34"/>
+                                <rect key="frame" x="20" y="113" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="DWt-Te-nra"/>
+                                    <constraint firstAttribute="height" constant="34" id="TYa-A4-FWp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaskCreate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAl-qo-L4v">
-                                <rect key="frame" x="47" y="84" width="86" height="20.5"/>
+                                <rect key="frame" x="20" y="83" width="180" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="6bn-kl-JDK"/>
+                                    <constraint firstAttribute="height" constant="20" id="DQb-dc-Lcf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCR-XW-eBO">
+                                <rect key="frame" x="344" y="55" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Q6J-Jy-8En"/>
+                                    <constraint firstAttribute="height" constant="45" id="o1l-Cq-W5o"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="setting"/>
+                                <connections>
+                                    <action selector="profileButton:" destination="c4Z-xv-6xj" eventType="touchUpInside" id="BNL-DL-GNU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ecc-ng-rov"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ecc-ng-rov" firstAttribute="trailing" secondItem="xMK-SG-tzV" secondAttribute="trailing" constant="47" id="8HO-lK-dEN"/>
                             <constraint firstItem="20V-oy-Xkb" firstAttribute="trailing" secondItem="ecc-ng-rov" secondAttribute="trailing" id="8uM-Jl-h57"/>
-                            <constraint firstItem="dAl-qo-L4v" firstAttribute="top" secondItem="ecc-ng-rov" secondAttribute="top" constant="40" id="BCR-PN-4AY"/>
+                            <constraint firstItem="eCR-XW-eBO" firstAttribute="leading" secondItem="dAl-qo-L4v" secondAttribute="trailing" constant="144" id="Afj-Vi-KN5"/>
+                            <constraint firstItem="eCR-XW-eBO" firstAttribute="top" secondItem="ecc-ng-rov" secondAttribute="top" constant="11" id="Cbp-te-5Qj"/>
                             <constraint firstItem="ecc-ng-rov" firstAttribute="bottom" secondItem="20V-oy-Xkb" secondAttribute="bottom" constant="49" id="FbR-s5-icD"/>
-                            <constraint firstItem="xMK-SG-tzV" firstAttribute="leading" secondItem="ecc-ng-rov" secondAttribute="leading" constant="47" id="PaR-dx-A8K"/>
-                            <constraint firstItem="xMK-SG-tzV" firstAttribute="top" secondItem="dAl-qo-L4v" secondAttribute="bottom" constant="8" symbolic="YES" id="Uvr-9u-VUg"/>
+                            <constraint firstItem="dAl-qo-L4v" firstAttribute="top" secondItem="ecc-ng-rov" secondAttribute="top" constant="39" id="GWr-2t-nab"/>
+                            <constraint firstItem="20V-oy-Xkb" firstAttribute="top" secondItem="xMK-SG-tzV" secondAttribute="bottom" constant="7.5" id="RBH-Y3-9BZ"/>
+                            <constraint firstItem="xMK-SG-tzV" firstAttribute="leading" secondItem="ecc-ng-rov" secondAttribute="leading" constant="20" id="TLi-Ya-uFe"/>
+                            <constraint firstItem="dAl-qo-L4v" firstAttribute="leading" secondItem="ecc-ng-rov" secondAttribute="leading" constant="20" id="Zd6-to-XH9"/>
+                            <constraint firstItem="xMK-SG-tzV" firstAttribute="top" secondItem="eCR-XW-eBO" secondAttribute="bottom" constant="13" id="bOJ-ou-CMX"/>
                             <constraint firstItem="20V-oy-Xkb" firstAttribute="leading" secondItem="ecc-ng-rov" secondAttribute="leading" id="ecD-P1-llL"/>
-                            <constraint firstItem="dAl-qo-L4v" firstAttribute="leading" secondItem="ecc-ng-rov" secondAttribute="leading" constant="47" id="ujr-n8-7yU"/>
-                            <constraint firstItem="20V-oy-Xkb" firstAttribute="top" secondItem="xMK-SG-tzV" secondAttribute="bottom" constant="8" symbolic="YES" id="vSV-Ab-zqO"/>
+                            <constraint firstItem="xMK-SG-tzV" firstAttribute="top" secondItem="dAl-qo-L4v" secondAttribute="bottom" constant="10" id="fKZ-BU-ew1"/>
+                            <constraint firstItem="ecc-ng-rov" firstAttribute="trailing" secondItem="eCR-XW-eBO" secondAttribute="trailing" constant="25" id="gEX-7l-yJw"/>
+                            <constraint firstItem="ecc-ng-rov" firstAttribute="trailing" secondItem="xMK-SG-tzV" secondAttribute="trailing" constant="20" id="uhd-7T-nJx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="MyList" image="doc.plaintext" catalog="system" id="u3s-Pu-EPQ"/>
@@ -258,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgh-0N-EW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="427"/>
+            <point key="canvasLocation" x="324.63768115942031" y="426.5625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KRh-4I-dvy">
@@ -297,7 +312,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TaskName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mdd-JI-Yzp">
-                                <rect key="frame" x="47" y="113.5" width="320" height="34"/>
+                                <rect key="frame" x="47" y="114" width="320" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="fq3-zR-Jjg"/>
                                 </constraints>
@@ -316,28 +331,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8W-WC-0VT">
-                                <rect key="frame" x="72" y="177.5" width="270" height="95.5"/>
+                                <rect key="frame" x="72" y="178" width="270" height="95.5"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9S-0g-X6s">
-                                <rect key="frame" x="293" y="316" width="49" height="30"/>
+                                <rect key="frame" x="293" y="316.5" width="49" height="29.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-rf-rfs">
-                                <rect key="frame" x="72" y="316" width="156" height="30"/>
+                                <rect key="frame" x="72" y="316.5" width="156" height="29.5"/>
                                 <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="REFRESH"/>
                                 <connections>
                                     <action selector="refreshButton:" destination="YOl-qc-g7P" eventType="touchUpInside" id="eCf-RN-W92"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaskCreate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zc-dp-IhC">
-                                <rect key="frame" x="47" y="84" width="86" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaskName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zc-dp-IhC">
+                                <rect key="frame" x="47" y="84" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
