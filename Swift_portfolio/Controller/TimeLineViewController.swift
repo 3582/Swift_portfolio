@@ -8,8 +8,13 @@
 
 import UIKit
 import SDWebImage
+import Alamofire
+import SwiftyJSON
 
-class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource, UIAdaptivePresentationControllerDelegate{
+class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource, UIAdaptivePresentationControllerDelegate,TabBarDelegate{
+    func didSelectTab(tabBarController: TabBarController) {
+    }
+    
     @IBOutlet weak var timeLineTable: UITableView!
     
     var userName = String()
@@ -27,6 +32,7 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
         timeLineTable.delegate = self
         timeLineTable.dataSource = self
 
+        print("timeline")
         // Do any additional setup after loading the view.
     }
     
@@ -65,12 +71,12 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }    
-
-    @IBAction func profileButton(_ sender: Any) {
-        let authVC = storyboard?.instantiateViewController(withIdentifier: "Auth") as! AuthViewController
-        authVC.presentationController?.delegate = self
-
-        self.present(authVC, animated: true, completion: nil)
+    
+    func rankingAPI(apiname:String,limit:String){
+        
+        Alamofire.request("http://localhost:3000/api/v1/posts/\(apiname)/\(limit)", method: .get).responseJSON { response in
+            print("Response: \(String(describing: response.description))")
+        }
     }
     /*
     // MARK: - Navigation

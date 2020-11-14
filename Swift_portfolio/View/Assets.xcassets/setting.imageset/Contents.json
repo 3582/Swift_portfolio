@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "無料の設定歯車アイコン.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
