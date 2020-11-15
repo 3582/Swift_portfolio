@@ -14,8 +14,11 @@
 		202FAF6024DD8C080099350A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202FAF5E24DD8C080099350A /* Main.storyboard */; };
 		202FAF6224DD8C0E0099350A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202FAF6124DD8C0E0099350A /* Assets.xcassets */; };
 		202FAF6524DD8C0E0099350A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202FAF6324DD8C0E0099350A /* LaunchScreen.storyboard */; };
+		20590BA725603616000C5AAF /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20590BA625603616000C5AAF /* RankingViewController.swift */; };
+		20590BAA25603635000C5AAF /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20590BA925603635000C5AAF /* TagViewController.swift */; };
 		20C669CC255FD88300E7634A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C669CB255FD88300E7634A /* TabBarController.swift */; };
 		20C669CF255FD9E300E7634A /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C669CE255FD9E300E7634A /* TabBarDelegate.swift */; };
+		20C669DB2560315800E7634A /* PagingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C669DA2560315800E7634A /* PagingMenuViewController.swift */; };
 		20E2A395251E690600721FF0 /* contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2A394251E690600721FF0 /* contents.swift */; };
 		20F4D3232516523F00B15BC9 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F4D3222516523F00B15BC9 /* TimeLineViewController.swift */; };
 		20F4D3282517052D00B15BC9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F4D3272517052D00B15BC9 /* PostViewController.swift */; };
@@ -35,9 +38,12 @@
 		202FAF6124DD8C0E0099350A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202FAF6424DD8C0E0099350A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		202FAF6624DD8C0E0099350A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20590BA625603616000C5AAF /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		20590BA925603635000C5AAF /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		20BE0A66251879A600330431 /* contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contents.swift; sourceTree = "<group>"; };
 		20C669CB255FD88300E7634A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		20C669CE255FD9E300E7634A /* TabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
+		20C669DA2560315800E7634A /* PagingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingMenuViewController.swift; sourceTree = "<group>"; };
 		20E2A394251E690600721FF0 /* contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contents.swift; sourceTree = "<group>"; };
 		20F4D3222516523F00B15BC9 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		20F4D3272517052D00B15BC9 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,9 @@
 				20002528252E0B5100255BCE /* MyTimeLineViewController.swift */,
 				20C669CB255FD88300E7634A /* TabBarController.swift */,
 				20C669CE255FD9E300E7634A /* TabBarDelegate.swift */,
+				20C669DA2560315800E7634A /* PagingMenuViewController.swift */,
+				20590BA625603616000C5AAF /* RankingViewController.swift */,
+				20590BA925603635000C5AAF /* TagViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 			files = (
 				20F4D3282517052D00B15BC9 /* PostViewController.swift in Sources */,
 				20002529252E0B5100255BCE /* MyTimeLineViewController.swift in Sources */,
+				20590BA725603616000C5AAF /* RankingViewController.swift in Sources */,
 				20C669CF255FD9E300E7634A /* TabBarDelegate.swift in Sources */,
 				202FAF5924DD8C080099350A /* AppDelegate.swift in Sources */,
 				20C669CC255FD88300E7634A /* TabBarController.swift in Sources */,
@@ -277,6 +287,8 @@
 				20F4D3232516523F00B15BC9 /* TimeLineViewController.swift in Sources */,
 				202FAF5B24DD8C080099350A /* SceneDelegate.swift in Sources */,
 				20E2A395251E690600721FF0 /* contents.swift in Sources */,
+				20C669DB2560315800E7634A /* PagingMenuViewController.swift in Sources */,
+				20590BAA25603635000C5AAF /* TagViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
