@@ -10,5 +10,6 @@ pod 'Alamofire', '~> 4.7.2'
 pod 'EMTNeumorphicView'
 pod 'SwiftyJSON'
 pod 'SDWebImage', '~> 5.0'
+pod 'Tabman', '~> 2.9'
 
 end

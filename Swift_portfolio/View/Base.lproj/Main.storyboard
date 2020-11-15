@@ -113,12 +113,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="-714.50892857142856"/>
+            <point key="canvasLocation" x="325" y="1092"/>
         </scene>
         <!--Ranking-->
         <scene sceneID="NHf-P9-eNt">
             <objects>
-                <viewController storyboardIdentifier="Timeline" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YDr-9M-6lh" customClass="TimeLineViewController" customModule="Swift_portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeLine" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YDr-9M-6lh" customClass="TimeLineViewController" customModule="Swift_portfolio" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WRK-Dd-9AH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,7 +178,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VE-ZB-7i4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015.9420289855074" y="-62.276785714285708"/>
+            <point key="canvasLocation" x="990" y="427"/>
+        </scene>
+        <!--Ranking View Controller-->
+        <scene sceneID="whH-qf-Lpu">
+            <objects>
+                <viewController storyboardIdentifier="Ranking" id="ORo-Zz-6Ma" customClass="RankingViewController" customModule="Swift_portfolio" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bfx-fv-thG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2hC-5k-4vg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dC4-1j-3Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1656.521739130435" y="426.5625"/>
+        </scene>
+        <!--Tag View Controller-->
+        <scene sceneID="BCS-WJ-wdR">
+            <objects>
+                <viewController storyboardIdentifier="TagView" id="kKC-L6-LqQ" customClass="TagViewController" customModule="Swift_portfolio" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KA8-fJ-Nnk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ws2-DM-OnI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rga-Vw-wBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2299" y="427"/>
         </scene>
         <!--MyList-->
         <scene sceneID="zC6-NF-e1F">
@@ -286,12 +316,28 @@
                     </tabBar>
                     <connections>
                         <segue destination="c4Z-xv-6xj" kind="relationship" relationship="viewControllers" id="cxA-HI-XPw"/>
-                        <segue destination="YDr-9M-6lh" kind="relationship" relationship="viewControllers" id="B49-Su-c34"/>
+                        <segue destination="oMO-7R-Ubo" kind="relationship" relationship="viewControllers" id="Fci-qi-AeK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd4-Fn-5eh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="-277"/>
+        </scene>
+        <!--ranking-->
+        <scene sceneID="jtk-bA-etr">
+            <objects>
+                <viewController storyboardIdentifier="TabMenu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oMO-7R-Ubo" customClass="PagingMenuViewController" customModule="Swift_portfolio" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hBG-Wz-brQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BZX-pu-DeB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ranking" image="list.dash" catalog="system" id="5Ns-ZM-Zlz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nmU-0n-2bO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="-277"/>
         </scene>
         <!--Task-->
         <scene sceneID="8j5-Yh-O1b">
@@ -399,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHZ-qH-xvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="638"/>
+            <point key="canvasLocation" x="-359" y="427"/>
         </scene>
     </scenes>
     <resources>

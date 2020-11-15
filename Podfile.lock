@@ -1,30 +1,38 @@
 PODS:
   - Alamofire (4.7.3)
   - EMTNeumorphicView (1.0.4)
-  - SDWebImage (5.8.0):
-    - SDWebImage/Core (= 5.8.0)
-  - SDWebImage/Core (5.8.0)
+  - Pageboy (3.6.2)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
   - SwiftyJSON (5.0.0)
+  - Tabman (2.9.1):
+    - Pageboy (~> 3.6.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
   - EMTNeumorphicView
   - SDWebImage (~> 5.0)
   - SwiftyJSON
+  - Tabman (~> 2.9)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - EMTNeumorphicView
+    - Pageboy
     - SDWebImage
     - SwiftyJSON
+    - Tabman
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   EMTNeumorphicView: cb5e92953e43b1872ab47fefd451a9ce0c16fc77
-  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Tabman: 085d89c65be9e883629bdaf5b1453a6397e57846
 
-PODFILE CHECKSUM: af14e9c337d57752416356e74ad2fa9614544458
+PODFILE CHECKSUM: 8a92a2131b068d019d6d4bef0bfc585312251159
 
 COCOAPODS: 1.9.3
