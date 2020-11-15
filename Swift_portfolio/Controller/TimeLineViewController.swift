@@ -31,9 +31,8 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
         
         timeLineTable.delegate = self
         timeLineTable.dataSource = self
-
-        print("timeline")
         // Do any additional setup after loading the view.
+        rankingAPI(apiname: "recent", limit: "5")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
