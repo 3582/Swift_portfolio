@@ -10,19 +10,15 @@ import Foundation
 
 class Contents{
     var userNameString:String = ""
-    var userImageString:String = ""
-    var contentImageString:String = ""
     var titleString:String = ""
-    var commentString:String = ""
-    var postDateString:String = ""
+    var textString:String = ""
+    var createdDateString:String = ""
     
-    init(userNameString:String,userImageString:String,contentImageString:String,titleString:String,commentString:String,postDateString:String) {
+    init(userNameString:String,titleString:String,textString:String,createdDateString:String) {
         self.userNameString = userNameString
-        self.userImageString = userImageString
-        self.contentImageString = contentImageString
         self.titleString = titleString
-        self.commentString = commentString
-        self.postDateString = postDateString
+        self.textString = textString
+        self.createdDateString = createdDateString
     }
     
 }
