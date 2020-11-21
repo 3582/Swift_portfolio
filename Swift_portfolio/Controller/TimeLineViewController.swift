@@ -17,13 +17,6 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var timeLineTable: UITableView!
     
-    var userName = String()
-    var userImageDate = Data()
-    var userImage = UIImage()
-    var tileString = String()
-    var createDate = String()
-    var userImageProfileImageString = String()
-    
     var contentsArray = [Contents]()
     
     override func viewDidLoad() {
@@ -41,22 +34,11 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = timeLineTable.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let profileImageView = cell.viewWithTag(1) as! UIImageView
-        profileImageView.sd_setImage(with: URL(string: contentsArray[indexPath.row].userImageString), completed:nil )
-        profileImageView.layer.cornerRadius = 30.00
-        
         let userNameLabel = cell.viewWithTag(2) as! UILabel
         userNameLabel.text = contentsArray[indexPath.row].userNameString
         
-        let dateLabel = cell.viewWithTag(3) as! UILabel
-        dateLabel.text = contentsArray[indexPath.row].postDateString
-        
         let titleLabel = cell.viewWithTag(4) as! UILabel
         titleLabel.text = contentsArray[indexPath.row].titleString
-        
-        let contentImageView = cell.viewWithTag(5) as! UIImageView
-        contentImageView.sd_setImage(with: URL(string: contentsArray[indexPath.row].contentImageString), completed:nil )
-        contentImageView.layer.cornerRadius = 20.00
         
         return cell
         
