@@ -17,28 +17,58 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var timeLineTable: UITableView!
     
-    var contentsArray = [Contents]()
-    
+    var posts: [[String: String?]] = []
+    var totalcount: [[String: Int?]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
         timeLineTable.delegate = self
         timeLineTable.dataSource = self
         // Do any additional setup after loading the view.
-        rankingAPI(apiname: "recent", limit: "5")
+        api()
+    }
+    func api(){
+        Alamofire.request("http://localhost:3000/api/v1/posts/recent/5", method: .get).responseJSON { response in
+            guard let object = response.result.value else {
+                return
+            }
+            let json = JSON(object)
+            json.forEach { (_, json) in
+                let posts: [String: String?] = [
+                    "title": json["title"].string,
+                    "created_at": json["created_at"].string,
+                    
+                ]
+                let totalcount: [String: Int?] = [
+                    "total": json["total"].int,
+                ]
+                self.posts.append(posts)
+                self.totalcount.append(totalcount)
+            }
+            self.timeLineTable.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contentsArray.count
+        return posts.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = timeLineTable.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let userNameLabel = cell.viewWithTag(2) as! UILabel
-        userNameLabel.text = contentsArray[indexPath.row].userNameString
+//        let userNameLabel = cell.viewWithTag(2) as! UILabel
+//        userNameLabel.text =
         
-        let titleLabel = cell.viewWithTag(4) as! UILabel
-        titleLabel.text = contentsArray[indexPath.row].titleString
+        let titleLabel = cell.viewWithTag(1) as! UILabel
+        let totalLabel = cell.viewWithTag(4) as! UILabel
+        let createdatLabel = cell.viewWithTag(5) as! UILabel
+        
+        let postsindex = posts[indexPath.row]
+        let totalindex = totalcount[indexPath.row]
+        
+        titleLabel.text = postsindex["title"]!
+        totalLabel.text = "total:" + String(totalindex["total"]!!)
+        createdatLabel.text = postsindex["created_at"]!
         
         return cell
         
@@ -46,18 +76,11 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        return 600
+        return view.frame.size.height/10
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-    }    
-    
-    func rankingAPI(apiname:String,limit:String){
-        
-        Alamofire.request("http://localhost:3000/api/v1/posts/\(apiname)/\(limit)", method: .get).responseJSON { response in
-            print("Response: \(String(describing: response.description))")
-        }
     }
     /*
     // MARK: - Navigation
