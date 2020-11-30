@@ -13,12 +13,15 @@ class Contents{
     var titleString:String = ""
     var textString:String = ""
     var createdDateString:String = ""
+    var totalString:String = ""
     
-    init(userNameString:String,titleString:String,textString:String,createdDateString:String) {
+    init(userNameString:String,titleString:String,textString:String,createdDateString:String,totalString:String) {
         self.userNameString = userNameString
         self.titleString = titleString
         self.textString = textString
         self.createdDateString = createdDateString
+        self.totalString = totalString
+        
     }
     
 }
