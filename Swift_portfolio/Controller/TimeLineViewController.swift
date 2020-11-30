@@ -18,7 +18,7 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     @IBOutlet weak var timeLineTable: UITableView!
     
     var posts: [[String: String?]] = []
-    
+    var totalcount: [[String: Int?]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,15 +33,17 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
                 return
             }
             let json = JSON(object)
-            print(json)
             json.forEach { (_, json) in
                 let posts: [String: String?] = [
                     "title": json["title"].string,
                     "created_at": json["created_at"].string,
-                    "total": json["total"].string,
                     
                 ]
+                let totalcount: [String: Int?] = [
+                    "total": json["total"].int,
+                ]
                 self.posts.append(posts)
+                self.totalcount.append(totalcount)
             }
             self.timeLineTable.reloadData()
         }
@@ -62,9 +64,10 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
         let createdatLabel = cell.viewWithTag(5) as! UILabel
         
         let postsindex = posts[indexPath.row]
+        let totalindex = totalcount[indexPath.row]
         
         titleLabel.text = postsindex["title"]!
-        totalLabel.text = postsindex["total"]!
+        totalLabel.text = "total:" + String(totalindex["total"]!!)
         createdatLabel.text = postsindex["created_at"]!
         
         return cell
