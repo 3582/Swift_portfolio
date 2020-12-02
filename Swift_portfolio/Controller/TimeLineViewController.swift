@@ -25,10 +25,10 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
         timeLineTable.delegate = self
         timeLineTable.dataSource = self
         // Do any additional setup after loading the view.
-        api()
+        postsapi(apiname:"recent",limit:10)
     }
-    func api(){
-        Alamofire.request("http://localhost:3000/api/v1/posts/recent/5", method: .get).responseJSON { response in
+    func postsapi(apiname:String,limit:Int){
+        Alamofire.request("http://localhost:3000/api/v1/posts/\(apiname)/\(limit)", method: .get).responseJSON { response in
             guard let object = response.result.value else {
                 return
             }
