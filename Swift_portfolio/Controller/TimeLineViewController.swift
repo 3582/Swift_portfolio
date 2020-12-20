@@ -36,6 +36,8 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
             json.forEach { (_, json) in
                 let posts: [String: String?] = [
                     "title": json["title"].string,
+                    "tag_name": json["tag_name"].string,
+                    "name": json["name"].string,
                     "created_at": json["created_at"].string,
                     
                 ]
@@ -60,6 +62,8 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
 //        userNameLabel.text =
         
         let titleLabel = cell.viewWithTag(1) as! UILabel
+        let nameLabel = cell.viewWithTag(2) as! UILabel
+        let tagLabel = cell.viewWithTag(3) as! UILabel
         let totalLabel = cell.viewWithTag(4) as! UILabel
         let createdatLabel = cell.viewWithTag(5) as! UILabel
         
@@ -67,6 +71,8 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
         let totalindex = totalcount[indexPath.row]
         
         titleLabel.text = postsindex["title"]!
+        nameLabel.text = postsindex["name"]!
+        tagLabel.text = postsindex["tag_name"]!
         totalLabel.text = "total:" + String(totalindex["total"]!!)
         createdatLabel.text = postsindex["created_at"]!
         
