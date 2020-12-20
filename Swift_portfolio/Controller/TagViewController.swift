@@ -18,9 +18,9 @@ class TagViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var tagsearchBar: UISearchBar!
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        <#code#>
-    }
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        <#code#>
+//    }
     /*
     // MARK: - Navigation
 
