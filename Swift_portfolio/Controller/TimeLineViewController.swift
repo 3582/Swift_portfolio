@@ -25,10 +25,10 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
         timeLineTable.delegate = self
         timeLineTable.dataSource = self
         // Do any additional setup after loading the view.
-        postsapi(apiname:"recent",limit:10)
+        postsapi(apiname:"created_at",limit:10)
     }
     func postsapi(apiname:String,limit:Int){
-        Alamofire.request("http://localhost:3000/api/v1/posts/\(apiname)/\(limit)", method: .get).responseJSON { response in
+        Alamofire.request("http://localhost:3000/api/v1/posts/ranking/\(apiname)/\(limit)", method: .get).responseJSON { response in
             guard let object = response.result.value else {
                 return
             }
@@ -58,23 +58,25 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = timeLineTable.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-//        let userNameLabel = cell.viewWithTag(2) as! UILabel
-//        userNameLabel.text =
-        
         let titleLabel = cell.viewWithTag(1) as! UILabel
         let nameLabel = cell.viewWithTag(2) as! UILabel
         let tagLabel = cell.viewWithTag(3) as! UILabel
         let totalLabel = cell.viewWithTag(4) as! UILabel
-        let createdatLabel = cell.viewWithTag(5) as! UILabel
+        let created_atLabel = cell.viewWithTag(5) as! UILabel
         
         let postsindex = posts[indexPath.row]
         let totalindex = totalcount[indexPath.row]
         
+        let created_at = postsindex["created_at"]!
+        let from = created_at!.index(created_at!.startIndex, offsetBy:0)
+        let to = created_at!.index(created_at!.startIndex, offsetBy:10)
+        let newString = String(created_at![from..<to])
+        
         titleLabel.text = postsindex["title"]!
         nameLabel.text = postsindex["name"]!
         tagLabel.text = postsindex["tag_name"]!
-        totalLabel.text = "total:" + String(totalindex["total"]!!)
-        createdatLabel.text = postsindex["created_at"]!
+        totalLabel.text = "total:" + String(totalindex["total"]! ?? 0)
+        created_atLabel.text = newString
         
         return cell
         
@@ -82,7 +84,7 @@ class TimeLineViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        return view.frame.size.height/10
+        return view.frame.size.height/6
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
