@@ -342,6 +342,9 @@
                         <viewLayoutGuide key="safeArea" id="Ws2-DM-OnI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tagsearchBar" destination="eQf-FG-LJk" id="IPj-Ey-8q2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rga-Vw-wBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
