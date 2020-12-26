@@ -184,6 +184,9 @@
                         <viewLayoutGuide key="safeArea" id="GoN-Q0-mHy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="rankingTable" destination="3Ty-dy-afE" id="Qhc-Yw-oet"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6W-dG-RZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
